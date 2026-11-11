@@ -8,4 +8,4 @@ Główna mechanika: gospodarka niedoboru. Pieniądze są, towaru nie ma, walutą
 - Pomysły na później: `POMYSLY.md`
 - Licencje assetów: `LICENCJE.md`
 
-Wymagany silnik: Godot 4.3 (Forward Plus).
+Wymagany silnik: Godot 4.7 (Forward Plus).
