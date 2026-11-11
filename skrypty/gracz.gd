@@ -20,8 +20,11 @@ func _physics_process(delta: float) -> void:
 	var kierunek: Vector3 = Vector3(wejscie.x, 0.0, wejscie.y)
 	kierunek = kierunek.rotated(Vector3.UP, deg_to_rad(obrot_wejscia_stopnie))
 
-	velocity.x = kierunek.x * predkosc
-	velocity.z = kierunek.z * predkosc
+	# Głodna albo niewyspana postać chodzi wolniej. O tym, ile wolniej, decydują Potrzeby,
+	# gracz tylko pyta o mnożnik, więc nie musi znać szczegółów głodu i energii.
+	var predkosc_biezaca: float = predkosc * Potrzeby.mnoznik_predkosci()
+	velocity.x = kierunek.x * predkosc_biezaca
+	velocity.z = kierunek.z * predkosc_biezaca
 
 	# Grawitacja trzyma postać na podłodze, gdyby np. zeszła z krawędzi.
 	if not is_on_floor():

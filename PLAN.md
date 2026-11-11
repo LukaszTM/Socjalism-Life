@@ -36,10 +36,10 @@ Zakres prototypu:
 **Gotowe, gdy:** czas płynie, widzę go na ekranie, po podejściu do łóżka i wciśnięciu E budzę się następnego dnia.
 
 ## Etap 3: Potrzeby
-- [ ] Autoload `Potrzeby`: głód i energia (0–100), spadają z upływem czasu.
-- [ ] Dwa paski na ekranie.
-- [ ] Sen uzupełnia energię.
-- [ ] Skutek zaniedbania: przy zerowej energii lub głodzie postać chodzi wolniej.
+- [x] Autoload `Potrzeby`: głód i energia (0–100), spadają z upływem czasu.
+- [x] Dwa paski na ekranie.
+- [x] Sen uzupełnia energię.
+- [x] Skutek zaniedbania: przy zerowej energii lub głodzie postać chodzi wolniej.
 
 **Gotowe, gdy:** paski spadają w czasie gry, sen przywraca energię, wyczerpana postać wyraźnie zwalnia.
 
