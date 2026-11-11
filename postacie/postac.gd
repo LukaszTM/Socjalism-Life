@@ -17,4 +17,6 @@ extends Resource
 @export var co_oferuje: Array[Przedmiot] = []
 ## Od jakiej relacji zaczynamy (0 obcy, 100 przyjaciel).
 @export_range(0, 100) var relacja_startowa: int = 20
+## Od jakiej relacji ta osoba zgodzi się na wymianę. Kombinator ceni się wyżej niż sąsiad.
+@export_range(0, 100) var prog_wymiany: int = 40
 @export_multiline var powitanie: String

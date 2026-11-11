@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Postac" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://postacie/postac.gd" id="1_postac"]
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="2_przedmiot"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/czesc_do_pralki.tres" id="p_czesc_do_pralki"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kartki_zywnosciowe.tres" id="p_kartki_zywnosciowe"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kawa.tres" id="p_kawa"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/wodka.tres" id="p_wodka"]
+
+[resource]
+script = ExtResource("1_postac")
+id = &"kombinator"
+imie = "Rysiek"
+rola = "kolega-kombinator"
+opis = "Zna kogoś, kto zna kogoś. Za odpowiednią cenę załatwi rzeczy, których oficjalnie nie ma."
+kolor = Color(0.8, 0.55, 0.2, 1)
+czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_wodka"), ExtResource("p_kawa")])
+co_oferuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_czesc_do_pralki"), ExtResource("p_kartki_zywnosciowe")])
+relacja_startowa = 20
+prog_wymiany = 60
+powitanie = "Cześć stary. Potrzebujesz czegoś? Wszystko da się załatwić, tylko nie za darmo."

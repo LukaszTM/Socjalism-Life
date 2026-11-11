@@ -70,11 +70,11 @@ Zakres prototypu:
 **Gotowe, gdy:** po zmianie mam więcej pieniędzy i mniej energii, a „załatwianie" czasem się udaje, a czasem kończy wpadką.
 
 ## Etap 7: Postacie, relacje i wymiana
-- [ ] Zasób `Postac` (imię, czego potrzebuje, co oferuje, relacja 0–100).
-- [ ] 4 postacie z zakresu rozmieszczone na mapie.
-- [ ] Okno rozmowy z opcjami: pogadaj, daj prezent, zaproponuj wymianę.
-- [ ] Wymiana towar za towar zależna od relacji.
-- [ ] Przywileje ze znajomości: sprzedawczyni z wysoką relacją odkłada towar pod ladę (zakup bez kolejki).
+- [x] Zasób `Postac` (imię, czego potrzebuje, co oferuje, relacja 0–100).
+- [x] 4 postacie z zakresu rozmieszczone na mapie.
+- [x] Okno rozmowy z opcjami: pogadaj, daj prezent, zaproponuj wymianę.
+- [x] Wymiana towar za towar zależna od relacji.
+- [x] Przywileje ze znajomości: sprzedawczyni z wysoką relacją odkłada towar pod ladę (zakup bez kolejki).
 
 **Gotowe, gdy:** wymieniam papierosy na kawę u sąsiada, a po podniesieniu relacji ze sprzedawczynią kupuję bez stania w kolejce.
 

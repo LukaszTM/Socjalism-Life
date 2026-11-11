@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Postac" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://postacie/postac.gd" id="1_postac"]
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="2_przedmiot"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kawa.tres" id="p_kawa"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/papierosy.tres" id="p_papierosy"]
+
+[resource]
+script = ExtResource("1_postac")
+id = &"sprzedawczynia"
+imie = "Pani Grażyna"
+rola = "sprzedawczyni"
+opis = "Królowa lady. Wie, co przyjedzie, zanim przyjedzie, i dla kogo to odłoży."
+kolor = Color(0.9, 0.4, 0.6, 1)
+czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_kawa"), ExtResource("p_papierosy")])
+co_oferuje = Array[ExtResource("2_przedmiot")]([])
+relacja_startowa = 20
+prog_wymiany = 60
+powitanie = "Następny! A pan czego? Jak nie ma na półce, to nie ma."

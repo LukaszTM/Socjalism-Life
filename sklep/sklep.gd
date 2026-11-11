@@ -14,6 +14,9 @@ signal odeszli_z_niczym
 @export var dostawy: Array[Dostawa] = []
 ## Przedmiot, który liczy się jako kartki żywnościowe przy zakupie mięsa.
 @export var kartki: Przedmiot
+## Kto stoi za ladą. Dobra relacja z nią daje towar spod lady, bez kolejki.
+@export var sprzedawczynia: Postac
+@export_range(0, 100) var prog_pod_lada: int = 60
 @export_range(0, 23) var godzina_otwarcia: int = 7
 @export_range(0, 23) var godzina_zamkniecia: int = 18
 @export_range(0, 23) var godzina_dostawy: int = 8
@@ -66,6 +69,11 @@ func minuty_od_dostawy() -> int:
 
 func szacowana_kolejka() -> int:
 	return Kolejka.szacuj_minuty(minuty_od_dostawy())
+
+
+## Znajomej sprzedawczyni nie trzeba stać w kolejce: odkłada towar pod ladę.
+func czy_pod_lada() -> bool:
+	return sprzedawczynia != null and Relacje.relacja(sprzedawczynia) >= prog_pod_lada
 
 
 ## Gracz staje w kolejce: czas gry leci, ludzie przed nim wykupują towar.

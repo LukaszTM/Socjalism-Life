@@ -59,6 +59,8 @@ func _pokaz_decyzje() -> void:
 		etykieta_tresci.text = "Dostawa była o %02d:%02d. Na półkach widzisz: %s.\nKolejka: ok. %d min (%s przed tobą)." % [
 			_sklep.minuta_dostawy / 60, _sklep.minuta_dostawy % 60, ", ".join(nazwy), minuty, _odmiana_osob(Kolejka.ile_osob_przed(minuty))]
 		_dodaj_przycisk("Stań w kolejce (ok. %d min)" % minuty, _stan_w_kolejce)
+		if _sklep.czy_pod_lada():
+			_dodaj_przycisk("Poproś znajomą o towar spod lady", _wez_spod_lady)
 
 	_dodaj_przycisk("Odejdź", zamknij)
 
@@ -71,6 +73,15 @@ func _stan_w_kolejce() -> void:
 		_dodaj_przycisk("Odejdź", zamknij)
 		return
 	etykieta_tresci.text = "Stałeś %d min. Twoja kolej. Co podać?" % minuty
+	lista_towaru.show()
+	_odswiez_towar()
+	_dodaj_przycisk("Dziękuję, to wszystko", zamknij)
+
+
+## Znajoma sprzedawczyni woła zza lady: bez kolejki, od razu zakupy.
+func _wez_spod_lady() -> void:
+	_wyczysc(przyciski)
+	etykieta_tresci.text = "Sprzedawczyni mruga i kiwa głową na bok: „Dla pana odłożyłam”. Co podać?"
 	lista_towaru.show()
 	_odswiez_towar()
 	_dodaj_przycisk("Dziękuję, to wszystko", zamknij)

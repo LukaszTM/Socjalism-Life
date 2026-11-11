@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Postac" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://postacie/postac.gd" id="1_postac"]
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="2_przedmiot"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kartki_zywnosciowe.tres" id="p_kartki_zywnosciowe"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kawa.tres" id="p_kawa"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/papierosy.tres" id="p_papierosy"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/wodka.tres" id="p_wodka"]
+
+[resource]
+script = ExtResource("1_postac")
+id = &"sasiad"
+imie = "Pan Zenek"
+rola = "sąsiad z trzeciego piętra"
+opis = "Emeryt, stoi w kolejkach od świtu, więc zawsze coś ma. Lubi pogadać o pogodzie i o rządzie."
+kolor = Color(0.55, 0.65, 0.35, 1)
+czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_papierosy"), ExtResource("p_wodka")])
+co_oferuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_kawa"), ExtResource("p_kartki_zywnosciowe")])
+relacja_startowa = 25
+prog_wymiany = 40
+powitanie = "O, sąsiad! Słyszał pan, że do mięsnego mają przywieźć? Nie? No to pan nic nie wie."
