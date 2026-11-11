@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://sceny/gracz.tscn" id="1_gracz"]
+[ext_resource type="PackedScene" path="res://sceny/kamera.tscn" id="2_kamera"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niebo"]
+sky_top_color = Color(0.45, 0.55, 0.7, 1)
+sky_horizon_color = Color(0.75, 0.75, 0.72, 1)
+ground_bottom_color = Color(0.25, 0.25, 0.23, 1)
+ground_horizon_color = Color(0.75, 0.75, 0.72, 1)
+
+[sub_resource type="Sky" id="Sky_niebo"]
+sky_material = SubResource("ProceduralSkyMaterial_niebo")
+
+[sub_resource type="Environment" id="Environment_swiat"]
+background_mode = 2
+sky = SubResource("Sky_niebo")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_podloga"]
+albedo_color = Color(0.45, 0.47, 0.44, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mieszkanie"]
+albedo_color = Color(0.75, 0.7, 0.55, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sklep"]
+albedo_color = Color(0.35, 0.6, 0.35, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_zaklad"]
+albedo_color = Color(0.55, 0.3, 0.3, 1)
+
+[node name="Swiat" type="Node3D"]
+
+[node name="Otoczenie" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_swiat")
+
+[node name="Swiatlo" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 20, 0)
+shadow_enabled = true
+
+[node name="Podloga" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(80, 1, 80)
+material = SubResource("StandardMaterial3D_podloga")
+
+[node name="Budynki" type="Node3D" parent="."]
+
+[node name="Mieszkanie" type="CSGBox3D" parent="Budynki"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -10)
+use_collision = true
+size = Vector3(8, 8, 8)
+material = SubResource("StandardMaterial3D_mieszkanie")
+
+[node name="Sklep" type="CSGBox3D" parent="Budynki"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, -8)
+use_collision = true
+size = Vector3(10, 5, 6)
+material = SubResource("StandardMaterial3D_sklep")
+
+[node name="Zaklad" type="CSGBox3D" parent="Budynki"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 12)
+use_collision = true
+size = Vector3(14, 6, 8)
+material = SubResource("StandardMaterial3D_zaklad")
+
+[node name="Slupek" type="CSGBox3D" parent="Budynki"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 4)
+use_collision = true
+size = Vector3(1, 2, 1)
+material = SubResource("StandardMaterial3D_zaklad")
+
+[node name="Gracz" parent="." instance=ExtResource("1_gracz")]
+
+[node name="Kamera" parent="." node_paths=PackedStringArray("cel") instance=ExtResource("2_kamera")]
+cel = NodePath("../Gracz")

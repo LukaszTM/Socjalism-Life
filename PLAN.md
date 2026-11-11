@@ -19,10 +19,10 @@ Zakres prototypu:
 **Gotowe, gdy:** projekt otwiera się w edytorze bez błędów i jest pierwszy commit.
 
 ## Etap 1: Świat i ruch
-- [ ] Scena `swiat.tscn`: podłoga z kolizją, światło kierunkowe z cieniami.
-- [ ] Scena `gracz.tscn` (CharacterBody3D) ze sterowaniem strzałkami i WASD.
-- [ ] Kamera izometryczna śledząca gracza.
-- [ ] Kilka klocków jako „budynki" z kolizją.
+- [x] Scena `swiat.tscn`: podłoga z kolizją, światło kierunkowe z cieniami.
+- [x] Scena `gracz.tscn` (CharacterBody3D) ze sterowaniem strzałkami i WASD.
+- [x] Kamera izometryczna śledząca gracza.
+- [x] Kilka klocków jako „budynki" z kolizją.
 
 **Gotowe, gdy:** chodzę postacią we wszystkie strony, „w górę" prowadzi w górę ekranu, nie przechodzę przez klocki, kamera płynnie podąża.
 
