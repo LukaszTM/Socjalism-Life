@@ -31,6 +31,7 @@ static func daj_prezent(npc: PostacNPC, przedmiot: Przedmiot) -> String:
 	var trafiony: bool = przedmiot in npc.dane.czego_potrzebuje
 	var ile: int = RELACJA_ZA_PREZENT_TRAFIONY if trafiony else RELACJA_ZA_PREZENT_ZWYKLY
 	Relacje.zmien(npc.dane, ile)
+	Statystyki.prezenty += 1
 	if trafiony:
 		return "%s: O! %s! Tego mi właśnie brakowało. Pamiętam takie rzeczy.\n(Relacja +%d)" % [npc.dane.imie, przedmiot.nazwa, ile]
 	return "%s: %s? No... dziękuję. Zawsze się przyda.\n(Relacja +%d)" % [npc.dane.imie, przedmiot.nazwa, ile]
@@ -70,5 +71,6 @@ static func wymien(npc: PostacNPC, daje: Przedmiot, bierze: Przedmiot) -> String
 		npc.wymian_dzis = 0
 	npc.dzien_ostatniej_wymiany = Zegar.numer_dnia
 	npc.wymian_dzis += 1
+	Statystyki.wymiany += 1
 	npc.wymieniono.emit(daje, bierze)
 	return "%s: Umowa stoi. %s za %s. Tylko nikomu ani słowa." % [npc.dane.imie, bierze.nazwa, daje.nazwa]

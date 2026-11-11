@@ -1,19 +1,20 @@
-[gd_resource type="Resource" script_class="Postac" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="Postac" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://postacie/postac.gd" id="1_postac"]
 [ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="2_przedmiot"]
 [ext_resource type="Resource" path="res://ekwipunek/przedmioty/kawa.tres" id="p_kawa"]
 [ext_resource type="Resource" path="res://ekwipunek/przedmioty/wodka.tres" id="p_wodka"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/talon_na_pralke.tres" id="p_talon"]
 
 [resource]
 script = ExtResource("1_postac")
 id = &"kierownik"
 imie = "Kierownik Wiesław"
 rola = "kierownik zmiany"
-opis = "Pilnuje listy obecności i rozdziela talony. Lubi, gdy ktoś pamięta o jego imieninach."
+opis = "Pilnuje listy obecności i rozdziela talony na sprzęt. Swoim ludziom załatwi talon na pralkę, obcym nie."
 kolor = Color(0.35, 0.4, 0.6, 1)
 czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_wodka"), ExtResource("p_kawa")])
-co_oferuje = Array[ExtResource("2_przedmiot")]([])
+co_oferuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_talon")])
 relacja_startowa = 30
-prog_wymiany = 70
+prog_wymiany = 60
 powitanie = "No, jest pan. Lista obecności nie wypełni się sama."

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_pralka_frania"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.95, 0.95, 1.0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pralka_frania"]
+gradient = SubResource("Gradient_pralka_frania")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"pralka_frania"
+nazwa = "Pralka Frania"
+opis = "Wirnikowa, biała, dudni jak czołg. Marzenie każdego mieszkania. Cena na talon: 3000 zł."
+ikona = SubResource("GradientTexture2D_pralka_frania")
+cena_urzedowa = 3000
+wymaga_kartek = false
+jadalny = false
+ile_syci = 0.0

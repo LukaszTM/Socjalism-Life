@@ -31,7 +31,15 @@ var _minuty_dnia: float = 0.0
 
 
 func _ready() -> void:
+	resetuj()
+
+
+## Stan początkowy: używany na starcie i przy „zagraj ponownie".
+func resetuj() -> void:
+	numer_dnia = 1
+	plynie = true
 	_minuty_dnia = godzina_startowa * MINUT_W_GODZINIE
+	minuta_minela.emit(godzina(), minuta())
 
 
 func _process(delta: float) -> void:

@@ -62,7 +62,16 @@ func _pokaz_decyzje() -> void:
 		if _sklep.czy_pod_lada():
 			_dodaj_przycisk("Poproś znajomą o towar spod lady", _wez_spod_lady)
 
+	if _sklep.czy_otwarty() and Ekwipunek.plecak.ile(_sklep.talon) > 0:
+		_dodaj_przycisk("Zrealizuj talon na pralkę (%d zł + własna część)" % _sklep.pralka.cena_urzedowa, _odbierz_pralke)
 	_dodaj_przycisk("Odejdź", zamknij)
+
+
+func _odbierz_pralke() -> void:
+	var odmowa: String = _sklep.kup_pralke()
+	# Przy sukcesie Zadanie zamyka to okno i otwiera ekran końca, więc nic tu nie piszemy.
+	if odmowa != "":
+		etykieta_komunikatu.text = odmowa
 
 
 func _stan_w_kolejce() -> void:

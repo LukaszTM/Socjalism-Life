@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_talon_na_pralke"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.95, 0.9, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_talon_na_pralke"]
+gradient = SubResource("Gradient_talon_na_pralke")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"talon_na_pralke"
+nazwa = "Talon na pralkę"
+opis = "Przydział na pralkę Frania z zakładu. Kierownik daje go tylko swoim."
+ikona = SubResource("GradientTexture2D_talon_na_pralke")
+cena_urzedowa = 0
+wymaga_kartek = false
+jadalny = false
+ile_syci = 0.0

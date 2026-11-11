@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://sklep/sklep.gd" id="1_sklep"]
 [ext_resource type="Script" path="res://interakcja/interakcja.gd" id="2_interakcja"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://sklep/dostawa.gd" id="10_dostawa"]
 [ext_resource type="PackedScene" path="res://postacie/postac_npc.tscn" id="11_npc"]
 [ext_resource type="Resource" path="res://postacie/postacie/sprzedawczynia.tres" id="12_sprzedawczynia"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/pralka_frania.tres" id="13_pralka"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/talon_na_pralke.tres" id="14_talon"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/czesc_do_pralki.tres" id="15_czesc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lada"]
 albedo_color = Color(0.5, 0.33, 0.18, 1)
@@ -24,6 +27,9 @@ script = ExtResource("1_sklep")
 dostawy = Array[ExtResource("10_dostawa")]([ExtResource("3_d1"), ExtResource("4_d2"), ExtResource("5_d3"), ExtResource("6_d4"), ExtResource("7_d5"), ExtResource("8_d6")])
 kartki = ExtResource("9_kartki")
 sprzedawczynia = ExtResource("12_sprzedawczynia")
+pralka = ExtResource("13_pralka")
+talon = ExtResource("14_talon")
+czesc_do_pralki = ExtResource("15_czesc")
 
 [node name="Lada" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

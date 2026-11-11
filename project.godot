@@ -18,6 +18,8 @@ Zegar="*res://czas/zegar.tscn"
 Potrzeby="*res://potrzeby/potrzeby.tscn"
 Ekwipunek="*res://ekwipunek/ekwipunek.tscn"
 Relacje="*res://postacie/relacje.tscn"
+Statystyki="*res://statystyki/statystyki.tscn"
+Zadanie="*res://zadanie/zadanie.tscn"
 
 [display]
 

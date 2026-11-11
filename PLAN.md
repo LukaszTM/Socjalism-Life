@@ -79,10 +79,10 @@ Zakres prototypu:
 **Gotowe, gdy:** wymieniam papierosy na kawę u sąsiada, a po podniesieniu relacji ze sprzedawczynią kupuję bez stania w kolejce.
 
 ## Etap 8: Cel i podsumowanie
-- [ ] Zadanie główne: zdobyć pralkę „Franię" w 7 dni. Wymaga łańcucha: część do pralki od kombinatora + przysługa kierownika + pieniądze.
-- [ ] Podgląd zadania na ekranie.
-- [ ] Ekran końca tygodnia: sukces lub porażka, statystyki (godziny w kolejkach, wymiany, wpadki).
-- [ ] Przycisk „zagraj ponownie".
+- [x] Zadanie główne: zdobyć pralkę „Franię" w 7 dni. Wymaga łańcucha: część do pralki od kombinatora + przysługa kierownika + pieniądze.
+- [x] Podgląd zadania na ekranie.
+- [x] Ekran końca tygodnia: sukces lub porażka, statystyki (godziny w kolejkach, wymiany, wpadki).
+- [x] Przycisk „zagraj ponownie".
 
 **Gotowe, gdy:** da się przejść cały tydzień od początku do ekranu końcowego, zarówno wygrywając, jak i przegrywając.
 

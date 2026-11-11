@@ -17,6 +17,13 @@ var plecak: Schowek = Schowek.new()
 func _ready() -> void:
 	# Przekazujemy sygnał plecaka dalej, żeby UI słuchało jednego miejsca: Ekwipunku.
 	plecak.zmieniony.connect(przedmioty_zmienione.emit)
+	resetuj()
+
+
+## Stan początkowy: używany na starcie i przy „zagraj ponownie".
+func resetuj() -> void:
+	plecak.wyczysc()
+	pieniadze = 0
 	dodaj_pieniadze(pieniadze_startowe)
 	for przedmiot: Przedmiot in przedmioty_startowe:
 		plecak.dodaj(przedmiot, 1)

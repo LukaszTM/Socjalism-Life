@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://ui/hud/hud_czas.gd" id="1_czas"]
 [ext_resource type="Script" path="res://ui/hud/hud_potrzeby.gd" id="2_potrzeby"]
 [ext_resource type="Script" path="res://ui/hud/hud_podpowiedz.gd" id="3_podpowiedz"]
+[ext_resource type="Script" path="res://ui/hud/hud_zadanie.gd" id="4_zadanie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlo"]
 bg_color = Color(0, 0, 0, 0.45)
@@ -38,6 +39,19 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 24
 text = "Poniedziałek, dzień 1    07:00"
 script = ExtResource("1_czas")
+
+[node name="EtykietaZadania" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 17
+text = "Cel: Pralka Frania"
+script = ExtResource("4_zadanie")
 
 [node name="Potrzeby" type="VBoxContainer" parent="."]
 anchors_preset = 1

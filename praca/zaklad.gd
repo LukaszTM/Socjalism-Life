@@ -93,6 +93,7 @@ func pracuj(czy_zalatwiac: bool) -> Dictionary:
 			var przedmiot: Przedmiot = do_zalatwienia[_rng.randi_range(0, do_zalatwienia.size() - 1)]
 			Ekwipunek.plecak.dodaj(przedmiot, 1)
 			wynik["zalatwiono"] = przedmiot
+			Statystyki.zalatwione += 1
 			zalatwiono.emit(przedmiot)
 		else:
 			# Kara nie może zabrać więcej, niż gracz ma: zaplac() odmówiłoby, więc bierzemy mniejsze z dwóch.
@@ -101,8 +102,10 @@ func pracuj(czy_zalatwiac: bool) -> Dictionary:
 			Relacje.zmien(kierownik, -kara_relacji_wpadka)
 			wynik["wpadka"] = true
 			wynik["kara_pieniezna"] = kara
+			Statystyki.wpadki += 1
 			wpadka.emit(kara)
 
+	Statystyki.zmiany_w_pracy += 1
 	zmiana_odbyta.emit(wyplata)
 	return wynik
 

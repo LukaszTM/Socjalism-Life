@@ -27,6 +27,12 @@ func _ready() -> void:
 	Zegar.godzina_minela.connect(_na_godzine)
 
 
+## Stan początkowy: używany przy „zagraj ponownie".
+func resetuj() -> void:
+	ustaw_glod(MAKS)
+	ustaw_energie(MAKS)
+
+
 func _na_godzine(_godzina: int) -> void:
 	ustaw_glod(glod - spadek_glodu_na_godzine)
 	ustaw_energie(energia - spadek_energii_na_godzine)

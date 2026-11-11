@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://zadanie/zadanie.gd" id="1_zadanie"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/pralka_frania.tres" id="2_pralka"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/czesc_do_pralki.tres" id="3_czesc"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/talon_na_pralke.tres" id="4_talon"]
+
+[node name="Zadanie" type="Node"]
+script = ExtResource("1_zadanie")
+cel = ExtResource("2_pralka")
+czesc = ExtResource("3_czesc")
+talon = ExtResource("4_talon")
+limit_dni = 7

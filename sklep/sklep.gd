@@ -14,6 +14,10 @@ signal odeszli_z_niczym
 @export var dostawy: Array[Dostawa] = []
 ## Przedmiot, który liczy się jako kartki żywnościowe przy zakupie mięsa.
 @export var kartki: Przedmiot
+## Dział AGD: pralka na talon, potrzebna też własna część.
+@export var pralka: Przedmiot
+@export var talon: Przedmiot
+@export var czesc_do_pralki: Przedmiot
 ## Kto stoi za ladą. Dobra relacja z nią daje towar spod lady, bez kolejki.
 @export var sprzedawczynia: Postac
 @export_range(0, 100) var prog_pod_lada: int = 60
@@ -82,8 +86,10 @@ func odstoj_kolejke() -> int:
 	var minuty: int = szacowana_kolejka()
 	Kolejka.odstoj(lada, minuty, _rng)
 	Zegar.przewin_minuty(minuty)
+	Statystyki.minuty_w_kolejkach += minuty
 	kolejka_odstana.emit(minuty)
 	if lada.pusty():
+		Statystyki.odejscia_z_niczym += 1
 		odeszli_z_niczym.emit()
 	return minuty
 
@@ -100,7 +106,28 @@ func kup(przedmiot: Przedmiot) -> String:
 	if przedmiot.wymaga_kartek:
 		Ekwipunek.plecak.zabierz(kartki, 1)
 	Ekwipunek.plecak.dodaj(przedmiot, 1)
+	Statystyki.zakupy += 1
 	zakupiono.emit(przedmiot)
+	return ""
+
+
+## Odbiór pralki na talon: dział AGD nie ma kolejki, ale wymaga talonu, własnej części
+## (sklep sprzedaje pralki bez programatora) i pełnej ceny. Zwraca powód odmowy albo pusty tekst.
+func kup_pralke() -> String:
+	if not czy_otwarty():
+		return "Zamknięte."
+	if Ekwipunek.plecak.ile(talon) <= 0:
+		return "Bez talonu nie ma mowy. Pralki idą tylko na przydział."
+	if Ekwipunek.plecak.ile(czesc_do_pralki) <= 0:
+		return "Pralka jest bez programatora, brakuje części. Bez własnej części to tylko biały bęben."
+	if Ekwipunek.pieniadze < pralka.cena_urzedowa:
+		return "Pralka kosztuje %d zł. Nie starcza." % pralka.cena_urzedowa
+	Ekwipunek.zaplac(pralka.cena_urzedowa)
+	Ekwipunek.plecak.zabierz(talon, 1)
+	Ekwipunek.plecak.zabierz(czesc_do_pralki, 1)
+	Ekwipunek.plecak.dodaj(pralka, 1)
+	Statystyki.zakupy += 1
+	zakupiono.emit(pralka)
 	return ""
 
 

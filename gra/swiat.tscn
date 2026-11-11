@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3]
+[gd_scene load_steps=22 format=3]
 
 [ext_resource type="PackedScene" path="res://gra/gracz.tscn" id="1_gracz"]
 [ext_resource type="PackedScene" path="res://gra/kamera.tscn" id="2_kamera"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" path="res://postacie/postacie/sasiad.tres" id="12_sasiad"]
 [ext_resource type="Resource" path="res://postacie/postacie/kombinator.tres" id="13_kombinator"]
 [ext_resource type="PackedScene" path="res://ui/rozmowa/okno_rozmowy.tscn" id="14_okno_rozmowy"]
+[ext_resource type="PackedScene" path="res://ui/koniec/ekran_konca.tscn" id="15_ekran_konca"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niebo"]
 sky_top_color = Color(0.45, 0.55, 0.7, 1)
@@ -117,6 +118,8 @@ cel = NodePath("../Gracz")
 [node name="OknoPracy" parent="." instance=ExtResource("10_okno_pracy")]
 
 [node name="OknoRozmowy" parent="." instance=ExtResource("14_okno_rozmowy")]
+
+[node name="EkranKonca" parent="." instance=ExtResource("15_ekran_konca")]
 
 [connection signal="cel_zmieniony" from="Gracz/Wykrywacz" to="HUD/EtykietaPodpowiedzi" method="pokaz_podpowiedz"]
 [connection signal="otworzono" from="Lodowka" to="Plecak" method="otworz_ze_schowkiem"]
