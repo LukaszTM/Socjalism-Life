@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+[ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="1_przedmiot"]
 
 [sub_resource type="Gradient" id="Gradient_kawa"]
 offsets = PackedFloat32Array(0)

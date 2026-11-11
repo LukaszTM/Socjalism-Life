@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://skrypty/plecak.gd" id="1_plecak"]
+[ext_resource type="Script" path="res://ui/plecak/plecak.gd" id="1_plecak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 content_margin_left = 20.0

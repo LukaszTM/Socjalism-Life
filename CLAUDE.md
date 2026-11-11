@@ -26,14 +26,22 @@
 - Wartości do strojenia (prędkość, długość dnia, ceny) jako `@export` albo stałe na górze pliku.
 
 ## Struktura folderów
+Folder = moduł (jedna mechanika gry). Scena, skrypt i dane tej mechaniki leżą razem,
+żeby zmiana jednej mechaniki dotykała jednego folderu. Moduły rozmawiają sygnałami,
+nie sięgają sobie do środka.
 ```
 res://
-  sceny/        # pliki .tscn (swiat, gracz, ui, miejsca)
-  skrypty/      # pliki .gd
-  dane/         # zasoby .tres (przedmioty, postacie)
-  assets/       # modele GLB, tekstury (pobieram je sam)
-  ui/           # sceny i motywy interfejsu
+  gra/            # szkielet: swiat.tscn, gracz, kamera
+  czas/           # autoload Zegar
+  interakcja/     # komponent Interakcja i wykrywacz na graczu
+  potrzeby/       # autoload Potrzeby (głód, energia)
+  ekwipunek/      # autoload Ekwipunek, Przedmiot, Schowek; przedmioty/*.tres
+  mieszkanie/     # łóżko, lodówka
+  ui/             # interfejs, po jednym podfolderze na okno (hud/, plecak/)
+  assets/         # modele GLB, tekstury (pobieram je sam)
 ```
+Kolejne etapy dostają własne moduły: `sklep/`, `praca/`, `postacie/`, `zadanie/`.
+Jedna mechanika = jeden plik: skrypt, który robi dwie rzeczy, dzielimy.
 
 ## Assety
 - Nie pobieraj assetów z internetu. Modele wrzucam sam do `assets/`.

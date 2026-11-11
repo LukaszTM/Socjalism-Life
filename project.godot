@@ -9,14 +9,14 @@ config_version=5
 config/name="Socjalism Life"
 config/description="Prototyp symulatora życia w państwie socjalistycznym. Gospodarka niedoboru: pieniądze są, towaru nie ma."
 config/features=PackedStringArray("4.7", "Forward Plus")
-run/main_scene="res://sceny/swiat.tscn"
+run/main_scene="res://gra/swiat.tscn"
 config/icon="res://icon.svg"
 
 [autoload]
 
-Zegar="*res://sceny/zegar.tscn"
-Potrzeby="*res://sceny/potrzeby.tscn"
-Ekwipunek="*res://sceny/ekwipunek.tscn"
+Zegar="*res://czas/zegar.tscn"
+Potrzeby="*res://potrzeby/potrzeby.tscn"
+Ekwipunek="*res://ekwipunek/ekwipunek.tscn"
 
 [display]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://skrypty/lozko.gd" id="1_lozko"]
-[ext_resource type="Script" path="res://skrypty/interakcja.gd" id="2_interakcja"]
+[ext_resource type="Script" path="res://mieszkanie/lozko.gd" id="1_lozko"]
+[ext_resource type="Script" path="res://interakcja/interakcja.gd" id="2_interakcja"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lozko"]
 albedo_color = Color(0.3, 0.35, 0.75, 1)

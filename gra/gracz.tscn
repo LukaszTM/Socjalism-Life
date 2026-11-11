@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://skrypty/gracz.gd" id="1_gracz"]
-[ext_resource type="Script" path="res://skrypty/wykrywacz_interakcji.gd" id="2_wykrywacz"]
+[ext_resource type="Script" path="res://gra/gracz.gd" id="1_gracz"]
+[ext_resource type="Script" path="res://interakcja/wykrywacz_interakcji.gd" id="2_wykrywacz"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gracz"]
 radius = 0.35

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3]
 
-[ext_resource type="PackedScene" path="res://sceny/gracz.tscn" id="1_gracz"]
-[ext_resource type="PackedScene" path="res://sceny/kamera.tscn" id="2_kamera"]
-[ext_resource type="PackedScene" path="res://sceny/lozko.tscn" id="3_lozko"]
-[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="4_hud"]
-[ext_resource type="PackedScene" path="res://sceny/lodowka.tscn" id="5_lodowka"]
-[ext_resource type="PackedScene" path="res://ui/plecak.tscn" id="6_plecak"]
+[ext_resource type="PackedScene" path="res://gra/gracz.tscn" id="1_gracz"]
+[ext_resource type="PackedScene" path="res://gra/kamera.tscn" id="2_kamera"]
+[ext_resource type="PackedScene" path="res://mieszkanie/lozko.tscn" id="3_lozko"]
+[ext_resource type="PackedScene" path="res://ui/hud/hud.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://mieszkanie/lodowka.tscn" id="5_lodowka"]
+[ext_resource type="PackedScene" path="res://ui/plecak/plecak.tscn" id="6_plecak"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niebo"]
 sky_top_color = Color(0.45, 0.55, 0.7, 1)
@@ -90,5 +90,5 @@ cel = NodePath("../Gracz")
 
 [node name="Plecak" parent="." instance=ExtResource("6_plecak")]
 
-[connection signal="cel_zmieniony" from="Gracz/Wykrywacz" to="HUD" method="pokaz_podpowiedz"]
+[connection signal="cel_zmieniony" from="Gracz/Wykrywacz" to="HUD/EtykietaPodpowiedzi" method="pokaz_podpowiedz"]
 [connection signal="otworzono" from="Lodowka" to="Plecak" method="otworz_ze_schowkiem"]
