@@ -7,5 +7,6 @@ Główna mechanika: gospodarka niedoboru. Pieniądze są, towaru nie ma, walutą
 - Plan etapów: `PLAN.md`
 - Pomysły na później: `POMYSLY.md`
 - Licencje assetów: `LICENCJE.md`
+- Testy bez okna: `testy/README.md`
 
 Wymagany silnik: Godot 4.7 (Forward Plus).

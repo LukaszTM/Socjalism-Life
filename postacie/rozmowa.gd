@@ -4,7 +4,7 @@ extends RefCounted
 ## Czysta logika bez węzłów, jak Kolejka. Okno rozmowy tylko ją woła i pokazuje wynik.
 
 ## Zwykła pogawędka: mały plus, raz dziennie na osobę.
-const RELACJA_ZA_ROZMOWE: int = 3
+const RELACJA_ZA_ROZMOWE: int = 5
 ## Prezent z listy „czego potrzebuje" cieszy bardziej niż byle co.
 const RELACJA_ZA_PREZENT_TRAFIONY: int = 15
 const RELACJA_ZA_PREZENT_ZWYKLY: int = 4

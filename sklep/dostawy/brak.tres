@@ -7,4 +7,4 @@
 script = ExtResource("1_dostawa")
 nazwa = "Nic nie dowieźli"
 pozycje = Array[ExtResource("2_pozycja")]([])
-waga = 1.2
+waga = 1.0

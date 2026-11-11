@@ -17,5 +17,5 @@ kolor = Color(0.8, 0.55, 0.2, 1)
 czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_wodka"), ExtResource("p_kawa")])
 co_oferuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_czesc_do_pralki"), ExtResource("p_kartki_zywnosciowe")])
 relacja_startowa = 25
-prog_wymiany = 50
+prog_wymiany = 45
 powitanie = "Cześć stary. Potrzebujesz czegoś? Wszystko da się załatwić, tylko nie za darmo."

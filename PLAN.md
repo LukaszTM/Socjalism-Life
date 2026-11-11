@@ -88,7 +88,7 @@ Zakres prototypu:
 
 ## Etap 9: Test i strojenie
 - [ ] Podmiana klocków na modele z `assets/` tam, gdzie już je mam.
-- [ ] Strojenie liczb: długość dnia, tempo potrzeb, częstość dostaw, ceny.
+- [ ] Strojenie liczb: długość dnia, tempo potrzeb, częstość dostaw, ceny. (Pierwsze przejście po symulacji bota: cel osiągalny w ok. 35% tygodni; reszta po testach ręcznych.)
 - [ ] Lista błędów z moich testów i ich naprawa.
 - [ ] Notatka `WNIOSKI.md`: co bawi, co nudzi, co dalej.
 

@@ -25,4 +25,4 @@ ilosc = 2
 script = ExtResource("1_dostawa")
 nazwa = "Rzut wódki"
 pozycje = Array[ExtResource("2_pozycja")]([SubResource("Pozycja_0"), SubResource("Pozycja_1"), SubResource("Pozycja_2")])
-waga = 0.6
+waga = 1.0

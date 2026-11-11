@@ -20,7 +20,7 @@ signal odeszli_z_niczym
 @export var czesc_do_pralki: Przedmiot
 ## Kto stoi za ladą. Dobra relacja z nią daje towar spod lady, bez kolejki.
 @export var sprzedawczynia: Postac
-@export_range(0, 100) var prog_pod_lada: int = 60
+@export_range(0, 100) var prog_pod_lada: int = 50
 @export_range(0, 23) var godzina_otwarcia: int = 7
 @export_range(0, 23) var godzina_zamkniecia: int = 18
 @export_range(0, 23) var godzina_dostawy: int = 8

@@ -16,5 +16,5 @@ kolor = Color(0.35, 0.4, 0.6, 1)
 czego_potrzebuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_wodka"), ExtResource("p_kawa")])
 co_oferuje = Array[ExtResource("2_przedmiot")]([ExtResource("p_talon")])
 relacja_startowa = 30
-prog_wymiany = 60
+prog_wymiany = 50
 powitanie = "No, jest pan. Lista obecności nie wypełni się sama."

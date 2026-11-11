@@ -13,4 +13,4 @@ ilosc = 4
 script = ExtResource("1_dostawa")
 nazwa = "Sam chleb"
 pozycje = Array[ExtResource("2_pozycja")]([SubResource("Pozycja_0")])
-waga = 1.5
+waga = 1.2

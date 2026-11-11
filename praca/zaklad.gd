@@ -19,7 +19,7 @@ signal nieobecnosc(numer_dnia: int)
 @export_range(0, 23) var godzina_konca: int = 16
 ## Dni tygodnia z pracą: 1 = poniedziałek, 7 = niedziela.
 @export var dni_robocze: Array[int] = [1, 2, 3, 4, 5]
-@export_range(0, 10000, 10, "suffix:zł") var wyplata: int = 400
+@export_range(0, 10000, 10, "suffix:zł") var wyplata: int = 450
 @export_range(0.0, 100.0, 1.0) var koszt_energii: float = 30.0
 ## Do tylu minut spóźnienia kierownik przymyka oko.
 @export_range(0, 240, 5, "suffix:min") var tolerancja_spoznienia: int = 30
