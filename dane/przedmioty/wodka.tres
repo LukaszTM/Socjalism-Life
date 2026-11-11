@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_wodka"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.70, 0.85, 0.95, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wodka"]
+gradient = SubResource("Gradient_wodka")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"wodka"
+nazwa = "Wódka"
+opis = "Butelka czystej. Otwiera drzwi, których nie otworzy podanie."
+ikona = SubResource("GradientTexture2D_wodka")
+cena_urzedowa = 700
+jadalny = false
+ile_syci = 0.0

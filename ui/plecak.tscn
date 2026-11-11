@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://skrypty/plecak.gd" id="1_plecak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+bg_color = Color(0.13, 0.13, 0.15, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.55, 0.45, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Plecak" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_plecak")
+
+[node name="Tlo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -230.0
+offset_right = 380.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Uklad" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Naglowek" type="HBoxContainer" parent="Panel/Uklad"]
+layout_mode = 2
+
+[node name="Tytul" type="Label" parent="Panel/Uklad/Naglowek"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Plecak"
+
+[node name="EtykietaPieniedzy" type="Label" parent="Panel/Uklad/Naglowek"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Pieniądze: 0 zł"
+horizontal_alignment = 2
+
+[node name="Separator" type="HSeparator" parent="Panel/Uklad"]
+layout_mode = 2
+
+[node name="Kolumny" type="HBoxContainer" parent="Panel/Uklad"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="KolumnaPlecaka" type="VBoxContainer" parent="Panel/Uklad/Kolumny"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="NaglowekPlecaka" type="Label" parent="Panel/Uklad/Kolumny/KolumnaPlecaka"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mam przy sobie"
+
+[node name="ListaPlecaka" type="VBoxContainer" parent="Panel/Uklad/Kolumny/KolumnaPlecaka"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="KolumnaSchowka" type="VBoxContainer" parent="Panel/Uklad/Kolumny"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="NaglowekSchowka" type="Label" parent="Panel/Uklad/Kolumny/KolumnaSchowka"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lodówka"
+
+[node name="ListaSchowka" type="VBoxContainer" parent="Panel/Uklad/Kolumny/KolumnaSchowka"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Podpowiedz" type="Label" parent="Panel/Uklad"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "I lub Esc: zamknij"
+horizontal_alignment = 1

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_kawa"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.36, 0.22, 0.12, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kawa"]
+gradient = SubResource("Gradient_kawa")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"kawa"
+nazwa = "Kawa"
+opis = "Paczka kawy mielonej. Lepsza niż pieniądze, gdy trzeba coś załatwić."
+ikona = SubResource("GradientTexture2D_kawa")
+cena_urzedowa = 400
+jadalny = false
+ile_syci = 0.0

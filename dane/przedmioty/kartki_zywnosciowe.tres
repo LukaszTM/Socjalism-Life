@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_kartki_zywnosciowe"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.90, 0.80, 0.50, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kartki_zywnosciowe"]
+gradient = SubResource("Gradient_kartki_zywnosciowe")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"kartki_zywnosciowe"
+nazwa = "Kartki żywnościowe"
+opis = "Kartki na mięso. Bez nich kiełbasy nie sprzedadzą, nawet jeśli jest."
+ikona = SubResource("GradientTexture2D_kartki_zywnosciowe")
+cena_urzedowa = 0
+jadalny = false
+ile_syci = 0.0

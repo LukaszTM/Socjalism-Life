@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_chleb"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.80, 0.62, 0.32, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_chleb"]
+gradient = SubResource("Gradient_chleb")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"chleb"
+nazwa = "Chleb"
+opis = "Bochenek zwykłego chleba. Podstawa każdego posiłku, o ile akurat go dowieźli."
+ikona = SubResource("GradientTexture2D_chleb")
+cena_urzedowa = 20
+jadalny = true
+ile_syci = 30.0

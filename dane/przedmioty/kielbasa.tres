@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Przedmiot" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://skrypty/przedmiot.gd" id="1_przedmiot"]
+
+[sub_resource type="Gradient" id="Gradient_kielbasa"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.72, 0.30, 0.25, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kielbasa"]
+gradient = SubResource("Gradient_kielbasa")
+width = 32
+height = 32
+
+[resource]
+script = ExtResource("1_przedmiot")
+id = &"kielbasa"
+nazwa = "Kiełbasa"
+opis = "Zwyczajna, na kartki. Pół kilo na osobę miesięcznie, jeśli jest."
+ikona = SubResource("GradientTexture2D_kielbasa")
+cena_urzedowa = 180
+jadalny = true
+ile_syci = 55.0

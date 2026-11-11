@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://skrypty/lodowka.gd" id="1_lodowka"]
+[ext_resource type="Script" path="res://skrypty/interakcja.gd" id="2_interakcja"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodowka"]
+albedo_color = Color(0.92, 0.92, 0.9, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_zasieg"]
+size = Vector3(2.5, 2.5, 2.5)
+
+[node name="Lodowka" type="Node3D"]
+script = ExtResource("1_lodowka")
+
+[node name="Wyglad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+use_collision = true
+size = Vector3(0.7, 1.6, 0.7)
+material = SubResource("StandardMaterial3D_lodowka")
+
+[node name="Interakcja" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("2_interakcja")
+nazwa_akcji = "Otwórz lodówkę"
+
+[node name="Zasieg" type="CollisionShape3D" parent="Interakcja"]
+shape = SubResource("BoxShape3D_zasieg")
+
+[connection signal="uzyto" from="Interakcja" to="." method="_na_uzycie"]

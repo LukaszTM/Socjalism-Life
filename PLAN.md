@@ -44,11 +44,11 @@ Zakres prototypu:
 **Gotowe, gdy:** paski spadają w czasie gry, sen przywraca energię, wyczerpana postać wyraźnie zwalnia.
 
 ## Etap 4: Przedmioty i ekwipunek
-- [ ] Zasób `Przedmiot` (nazwa, opis, ikona, cena urzędowa, czy jadalny, ile syci).
-- [ ] 8 przedmiotów z zakresu jako pliki `.tres`.
-- [ ] Autoload `Ekwipunek` z pieniędzmi i listą przedmiotów.
-- [ ] Okno plecaka (klawisz I): lista przedmiotów, ilości, przycisk „zjedz" dla jadalnych.
-- [ ] Lodówka w mieszkaniu jako schowek.
+- [x] Zasób `Przedmiot` (nazwa, opis, ikona, cena urzędowa, czy jadalny, ile syci).
+- [x] 8 przedmiotów z zakresu jako pliki `.tres`.
+- [x] Autoload `Ekwipunek` z pieniędzmi i listą przedmiotów.
+- [x] Okno plecaka (klawisz I): lista przedmiotów, ilości, przycisk „zjedz" dla jadalnych.
+- [x] Lodówka w mieszkaniu jako schowek.
 
 **Gotowe, gdy:** otwieram plecak, zjadam chleb i pasek głodu rośnie, przekładam rzeczy między plecakiem a lodówką.
 
