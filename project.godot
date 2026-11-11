@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 Zegar="*res://czas/zegar.tscn"
 Potrzeby="*res://potrzeby/potrzeby.tscn"
 Ekwipunek="*res://ekwipunek/ekwipunek.tscn"
+Relacje="*res://postacie/relacje.tscn"
 
 [display]
 

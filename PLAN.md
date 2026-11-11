@@ -62,10 +62,10 @@ Zakres prototypu:
 **Gotowe, gdy:** jednego dnia kupuję chleb po kolejce, innego odchodzę z niczym, bo zabrakło towaru. To pierwszy moment na ocenę, czy niedobór daje frajdę.
 
 ## Etap 6: Praca
-- [ ] Miejsce „zakład pracy" z kierownikiem.
-- [ ] Zmiana trwa określone godziny, zabiera czas i energię, daje wypłatę.
-- [ ] Spóźnienie lub nieobecność obniża relację z kierownikiem.
-- [ ] Opcja „załatw coś": szansa na zdobycie przedmiotu, ryzyko wpadki (kara pieniężna, spadek relacji).
+- [x] Miejsce „zakład pracy" z kierownikiem.
+- [x] Zmiana trwa określone godziny, zabiera czas i energię, daje wypłatę.
+- [x] Spóźnienie lub nieobecność obniża relację z kierownikiem.
+- [x] Opcja „załatw coś": szansa na zdobycie przedmiotu, ryzyko wpadki (kara pieniężna, spadek relacji).
 
 **Gotowe, gdy:** po zmianie mam więcej pieniędzy i mniej energii, a „załatwianie" czasem się udaje, a czasem kończy wpadką.
 
