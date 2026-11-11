@@ -27,11 +27,11 @@ Zakres prototypu:
 **Gotowe, gdy:** chodzę postacią we wszystkie strony, „w górę" prowadzi w górę ekranu, nie przechodzę przez klocki, kamera płynnie podąża.
 
 ## Etap 2: Zegar i dzień
-- [ ] Autoload `Zegar`: godzina, dzień tygodnia, numer dnia, sygnały `godzina_minela` i `dzien_minal`.
-- [ ] Długość dnia jako ustawienie (na start: 1 dzień gry = 5 minut).
-- [ ] Wyświetlanie dnia i godziny na ekranie.
-- [ ] Łóżko jako obiekt interakcji: sen przewija czas do rana.
-- [ ] Wspólny system interakcji (klawisz E przy obiekcie, podpowiedź na ekranie). Będzie używany we wszystkich kolejnych etapach.
+- [x] Autoload `Zegar`: godzina, dzień tygodnia, numer dnia, sygnały `godzina_minela` i `dzien_minal`.
+- [x] Długość dnia jako ustawienie (na start: 1 dzień gry = 5 minut).
+- [x] Wyświetlanie dnia i godziny na ekranie.
+- [x] Łóżko jako obiekt interakcji: sen przewija czas do rana.
+- [x] Wspólny system interakcji (klawisz E przy obiekcie, podpowiedź na ekranie). Będzie używany we wszystkich kolejnych etapach.
 
 **Gotowe, gdy:** czas płynie, widzę go na ekranie, po podejściu do łóżka i wciśnięciu E budzę się następnego dnia.
 
