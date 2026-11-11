@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dostawa" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://sklep/dostawa.gd" id="1_dostawa"]
+[ext_resource type="Script" path="res://sklep/pozycja_dostawy.gd" id="2_pozycja"]
+
+[resource]
+script = ExtResource("1_dostawa")
+nazwa = "Nic nie dowieźli"
+pozycje = Array[ExtResource("2_pozycja")]([])
+waga = 1.2

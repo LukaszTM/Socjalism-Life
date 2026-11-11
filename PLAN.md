@@ -53,11 +53,11 @@ Zakres prototypu:
 **Gotowe, gdy:** otwieram plecak, zjadam chleb i pasek głodu rośnie, przekładam rzeczy między plecakiem a lodówką.
 
 ## Etap 5: Sklep, dostawy i kolejka
-- [ ] Miejsce „sklep" na mapie ze sprzedawczynią.
-- [ ] Dostawy: każdego dnia losowy, mały zestaw towarów. Część dni bez dostawy.
-- [ ] Kolejka: stanie zabiera czas gry (im później po dostawie, tym dłuższa). Gracz widzi szacowany czas i decyduje, czy stać.
-- [ ] Towar może się skończyć, zanim dojdę do lady.
-- [ ] Kartki żywnościowe wymagane do zakupu kiełbasy.
+- [x] Miejsce „sklep" na mapie ze sprzedawczynią.
+- [x] Dostawy: każdego dnia losowy, mały zestaw towarów. Część dni bez dostawy.
+- [x] Kolejka: stanie zabiera czas gry (im później po dostawie, tym dłuższa). Gracz widzi szacowany czas i decyduje, czy stać.
+- [x] Towar może się skończyć, zanim dojdę do lady.
+- [x] Kartki żywnościowe wymagane do zakupu kiełbasy.
 
 **Gotowe, gdy:** jednego dnia kupuję chleb po kolejce, innego odchodzę z niczym, bo zabrakło towaru. To pierwszy moment na ocenę, czy niedobór daje frajdę.
 

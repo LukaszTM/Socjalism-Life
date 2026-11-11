@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Dostawa" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://sklep/dostawa.gd" id="1_dostawa"]
+[ext_resource type="Script" path="res://sklep/pozycja_dostawy.gd" id="2_pozycja"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/chleb.tres" id="p_chleb"]
+
+[sub_resource type="Resource" id="Pozycja_0"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_chleb")
+ilosc = 4
+
+[resource]
+script = ExtResource("1_dostawa")
+nazwa = "Sam chleb"
+pozycje = Array[ExtResource("2_pozycja")]([SubResource("Pozycja_0")])
+waga = 1.5

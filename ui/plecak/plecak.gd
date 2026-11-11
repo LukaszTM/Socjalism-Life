@@ -1,8 +1,9 @@
-extends CanvasLayer
+extends Okno
 ## Okno plecaka (klawisz I). Pokazuje pieniądze i listę przedmiotów gracza.
 ## Gdy otwiera je lodówka, dostaje jej schowek i pokazuje drugą kolumnę
-## z przyciskami do przekładania. Działa przy zatrzymanej grze (process_mode: Always),
-## bo otwarte okno pauzuje całe drzewo: zegar stoi, gracz nie chodzi.
+## z przyciskami do przekładania. Pauzę i Esc załatwia wspólna klasa Okno.
+
+const SCENA_WIERSZA: PackedScene = preload("res://ui/wspolne/wiersz_przedmiotu.tscn")
 
 @onready var etykieta_pieniedzy: Label = %EtykietaPieniedzy
 @onready var lista_plecaka: VBoxContainer = %ListaPlecaka
@@ -15,31 +16,31 @@ var _schowek: Schowek = null
 
 
 func _ready() -> void:
-	hide()
+	super()
 	Ekwipunek.przedmioty_zmienione.connect(_odswiez)
 	Ekwipunek.pieniadze_zmienione.connect(_odswiez_pieniadze)
 
 
 func _unhandled_input(zdarzenie: InputEvent) -> void:
+	super(zdarzenie)
 	if zdarzenie.is_action_pressed("plecak"):
 		if visible:
 			zamknij()
 		else:
-			otworz()
-		get_viewport().set_input_as_handled()
-	elif visible and zdarzenie.is_action_pressed("ui_cancel"):
-		zamknij()
+			otworz_plecak()
 		get_viewport().set_input_as_handled()
 
 
 ## Sam plecak, bez drugiej kolumny.
-func otworz() -> void:
+func otworz_plecak() -> void:
 	_schowek = null
 	_pokaz()
 
 
 ## Plecak obok innego schowka. Podłączone w scenie świata do sygnału `otworzono` lodówki.
 func otworz_ze_schowkiem(schowek: Schowek, nazwa: String) -> void:
+	if not czy_mozna_otworzyc():
+		return
 	_schowek = schowek
 	_schowek.zmieniony.connect(_odswiez)
 	naglowek_schowka.text = nazwa
@@ -50,17 +51,17 @@ func zamknij() -> void:
 	if _schowek != null:
 		_schowek.zmieniony.disconnect(_odswiez)
 		_schowek = null
-	hide()
-	get_tree().paused = false
+	super()
 
 
 func _pokaz() -> void:
+	if not czy_mozna_otworzyc():
+		return
 	kolumna_schowka.visible = _schowek != null
 	# Najpierw pokazujemy, potem odświeżamy: _odswiez() pomija pracę, gdy okno jest schowane.
-	show()
+	otworz()
 	_odswiez()
 	_odswiez_pieniadze(Ekwipunek.pieniadze)
-	get_tree().paused = true
 
 
 func _odswiez_pieniadze(ile: int) -> void:
@@ -82,7 +83,6 @@ func _wypelnij_liste(lista: VBoxContainer, schowek: Schowek, czy_plecak: bool) -
 		lista.remove_child(dziecko)
 		# queue_free() zamiast free(): przebudowę często wywołuje kliknięcie przycisku
 		# z tego właśnie wiersza, a obiektu nie można zwolnić, gdy jeszcze wysyła sygnał.
-		# queue_free() usuwa go bezpiecznie pod koniec klatki.
 		dziecko.queue_free()
 	if schowek.pusty():
 		var pusto: Label = Label.new()
@@ -94,40 +94,20 @@ func _wypelnij_liste(lista: VBoxContainer, schowek: Schowek, czy_plecak: bool) -
 		lista.add_child(_zbuduj_wiersz(przedmiot, schowek.ile(przedmiot), czy_plecak))
 
 
-func _zbuduj_wiersz(przedmiot: Przedmiot, ile: int, czy_plecak: bool) -> HBoxContainer:
-	var wiersz: HBoxContainer = HBoxContainer.new()
-	wiersz.add_theme_constant_override("separation", 10)
-
-	var ikona: TextureRect = TextureRect.new()
-	ikona.texture = przedmiot.ikona
-	ikona.custom_minimum_size = Vector2(28, 28)
-	ikona.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	ikona.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	wiersz.add_child(ikona)
-
-	var nazwa: Label = Label.new()
-	nazwa.text = "%s × %d" % [przedmiot.nazwa, ile]
-	nazwa.tooltip_text = przedmiot.opis
-	nazwa.mouse_filter = Control.MOUSE_FILTER_PASS
-	nazwa.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	wiersz.add_child(nazwa)
-
-	if czy_plecak and przedmiot.jadalny:
-		var zjedz: Button = Button.new()
-		zjedz.text = "Zjedz"
-		zjedz.pressed.connect(func() -> void: Ekwipunek.zjedz(przedmiot))
-		wiersz.add_child(zjedz)
-
-	if _schowek != null:
-		var przeloz: Button = Button.new()
-		if czy_plecak:
-			przeloz.text = "Odłóż →"
-			przeloz.pressed.connect(func() -> void: _przeloz(przedmiot, Ekwipunek.plecak, _schowek))
-		else:
-			przeloz.text = "← Weź"
-			przeloz.pressed.connect(func() -> void: _przeloz(przedmiot, _schowek, Ekwipunek.plecak))
-		wiersz.add_child(przeloz)
-
+func _zbuduj_wiersz(przedmiot: Przedmiot, ile: int, czy_plecak: bool) -> WierszPrzedmiotu:
+	var wiersz: WierszPrzedmiotu = SCENA_WIERSZA.instantiate()
+	# Wiersz trzeba najpierw dodać do drzewa, żeby jego węzły (@onready) były gotowe,
+	# dlatego ustawiamy treść po add_child, w _po_dodaniu.
+	wiersz.ready.connect(func() -> void:
+		wiersz.ustaw(przedmiot, ile)
+		if czy_plecak and przedmiot.jadalny:
+			wiersz.dodaj_przycisk("Zjedz", func() -> void: Ekwipunek.zjedz(przedmiot))
+		if _schowek != null:
+			if czy_plecak:
+				wiersz.dodaj_przycisk("Odłóż →", func() -> void: _przeloz(przedmiot, Ekwipunek.plecak, _schowek))
+			else:
+				wiersz.dodaj_przycisk("← Weź", func() -> void: _przeloz(przedmiot, _schowek, Ekwipunek.plecak))
+	)
 	return wiersz
 
 

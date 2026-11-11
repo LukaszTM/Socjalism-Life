@@ -29,6 +29,13 @@ func zabierz(przedmiot: Przedmiot, ile: int = 1) -> bool:
 	return true
 
 
+func wyczysc() -> void:
+	if _ilosci.is_empty():
+		return
+	_ilosci.clear()
+	zmieniony.emit()
+
+
 func ile(przedmiot: Przedmiot) -> int:
 	return _ilosci.get(przedmiot, 0)
 

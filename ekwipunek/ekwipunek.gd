@@ -7,6 +7,7 @@ signal przedmioty_zmienione
 
 ## Z czym zaczynamy grę. Ustawiane w scenie `ekwipunek.tscn`, nie w kodzie.
 @export_range(0, 100000, 10, "suffix:zł") var pieniadze_startowe: int = 1500
+## Ten sam przedmiot wpisany kilka razy daje kilka sztuk.
 @export var przedmioty_startowe: Array[Przedmiot] = []
 
 var pieniadze: int = 0

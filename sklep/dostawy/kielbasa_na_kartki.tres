@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Dostawa" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://sklep/dostawa.gd" id="1_dostawa"]
+[ext_resource type="Script" path="res://sklep/pozycja_dostawy.gd" id="2_pozycja"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/chleb.tres" id="p_chleb"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kielbasa.tres" id="p_kielbasa"]
+
+[sub_resource type="Resource" id="Pozycja_0"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_chleb")
+ilosc = 3
+
+[sub_resource type="Resource" id="Pozycja_1"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_kielbasa")
+ilosc = 2
+
+[resource]
+script = ExtResource("1_dostawa")
+nazwa = "Kiełbasa na kartki"
+pozycje = Array[ExtResource("2_pozycja")]([SubResource("Pozycja_0"), SubResource("Pozycja_1")])
+waga = 1.0

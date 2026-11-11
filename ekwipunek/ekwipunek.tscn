@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://ekwipunek/ekwipunek.gd" id="1_ekwipunek"]
 [ext_resource type="Script" path="res://ekwipunek/przedmiot.gd" id="2_przedmiot"]
 [ext_resource type="Resource" path="res://ekwipunek/przedmioty/chleb.tres" id="3_chleb"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kartki_zywnosciowe.tres" id="4_kartki"]
 
 [node name="Ekwipunek" type="Node"]
 script = ExtResource("1_ekwipunek")
 pieniadze_startowe = 1500
-przedmioty_startowe = Array[ExtResource("2_przedmiot")]([ExtResource("3_chleb")])
+przedmioty_startowe = Array[ExtResource("2_przedmiot")]([ExtResource("3_chleb"), ExtResource("4_kartki"), ExtResource("4_kartki"), ExtResource("4_kartki")])

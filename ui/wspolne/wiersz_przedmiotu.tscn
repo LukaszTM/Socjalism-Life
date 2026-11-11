@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/wspolne/wiersz_przedmiotu.gd" id="1_wiersz"]
+
+[node name="WierszPrzedmiotu" type="HBoxContainer"]
+theme_override_constants/separation = 10
+script = ExtResource("1_wiersz")
+
+[node name="Ikona" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Nazwa" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Przedmiot × 1"
+
+[node name="Info" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+modulate = Color(1, 1, 1, 0.75)
+text = "20 zł"
+
+[node name="Przyciski" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6

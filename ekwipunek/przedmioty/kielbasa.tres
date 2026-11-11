@@ -18,5 +18,6 @@ nazwa = "Kiełbasa"
 opis = "Zwyczajna, na kartki. Pół kilo na osobę miesięcznie, jeśli jest."
 ikona = SubResource("GradientTexture2D_kielbasa")
 cena_urzedowa = 180
+wymaga_kartek = true
 jadalny = true
 ile_syci = 55.0

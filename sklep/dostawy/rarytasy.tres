@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Dostawa" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://sklep/dostawa.gd" id="1_dostawa"]
+[ext_resource type="Script" path="res://sklep/pozycja_dostawy.gd" id="2_pozycja"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/chleb.tres" id="p_chleb"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/kawa.tres" id="p_kawa"]
+[ext_resource type="Resource" path="res://ekwipunek/przedmioty/papierosy.tres" id="p_papierosy"]
+
+[sub_resource type="Resource" id="Pozycja_0"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_chleb")
+ilosc = 2
+
+[sub_resource type="Resource" id="Pozycja_1"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_kawa")
+ilosc = 1
+
+[sub_resource type="Resource" id="Pozycja_2"]
+script = ExtResource("2_pozycja")
+przedmiot = ExtResource("p_papierosy")
+ilosc = 3
+
+[resource]
+script = ExtResource("1_dostawa")
+nazwa = "Rarytasy"
+pozycje = Array[ExtResource("2_pozycja")]([SubResource("Pozycja_0"), SubResource("Pozycja_1"), SubResource("Pozycja_2")])
+waga = 0.7

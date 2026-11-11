@@ -70,6 +70,12 @@ func przewin_do_godziny(godzina_docelowa: int) -> int:
 	return ile
 
 
+## Przewija czas o podaną liczbę minut (np. stanie w kolejce, zmiana w pracy).
+func przewin_minuty(ile: int) -> void:
+	if ile > 0:
+		_dodaj_minuty(float(ile))
+
+
 ## Przesuwa czas o podaną liczbę minut, wysyłając po drodze sygnały za każdą
 ## pełną godzinę i każdą północ. Dzięki temu sen o 10 godzin „przeżywa" te godziny
 ## tak samo jak zwykły upływ czasu, a inne systemy (głód, dostawy) o tym wiedzą.

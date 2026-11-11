@@ -13,6 +13,8 @@ extends Resource
 @export var ikona: Texture2D
 ## Cena w sklepie w złotych. 0 oznacza, że rzeczy nie da się kupić, tylko załatwić.
 @export_range(0, 100000, 1, "suffix:zł") var cena_urzedowa: int = 0
+## Czy sklep żąda kartek żywnościowych przy zakupie (mięso).
+@export var wymaga_kartek: bool = false
 ## Czy można to zjeść z plecaka.
 @export var jadalny: bool = false
 ## O ile punktów rośnie pasek głodu po zjedzeniu.
