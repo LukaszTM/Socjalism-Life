@@ -1,0 +1,22 @@
+# Godot 4 - pliki generowane automatycznie przez edytor
+.godot/
+.import/
+*.import.tmp
+
+# Eksporty gry
+export/
+export_presets.cfg
+*.exe
+*.pck
+*.apk
+*.x86_64
+
+# Pliki tymczasowe i systemowe
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# Edytory i IDE
+.vscode/
+.idea/

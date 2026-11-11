@@ -1,0 +1,22 @@
+; Engine configuration file.
+; It's automatically generated when the project is saved, and in Godot it's
+; edited from the Project Settings dialog in the editor.
+
+config_version=5
+
+[application]
+
+config/name="Socjalism Life"
+config/description="Prototyp symulatora życia w państwie socjalistycznym. Gospodarka niedoboru: pieniądze są, towaru nie ma."
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[rendering]
+
+; Cienie z światła kierunkowego - potrzebne w Etapie 1 (podłoga + budynki).
+lights_and_shadows/directional_shadow/size=4096
