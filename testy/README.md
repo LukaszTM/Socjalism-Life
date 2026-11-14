@@ -16,3 +16,9 @@ testy/uruchom.sh test_symulacja    # bot gra 300 tygodni, mierzy odsetek wygrany
 
 Jeśli `godot` nie jest w PATH: `GODOT=/sciezka/do/godota testy/uruchom.sh test_regresja`.
 Test czytamy oczami: nie ma asercji, tylko wypisane wartości i oczekiwania w nawiasach.
+
+## Zrzuty ekranu bez edytora
+
+`godot --path . res://testy/zrzuty.tscn` uruchamia grę z oknem, przechodzi przez kilka
+miejsc i okien, zapisuje PNG do `user://zrzuty/` i kończy. Na Linuksie bez monitora:
+`xvfb-run -a -s "-screen 0 1280x720x24" godot --path . --rendering-method gl_compatibility --rendering-driver opengl3 res://testy/zrzuty.tscn`.
